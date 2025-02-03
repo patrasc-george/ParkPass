@@ -17,7 +17,7 @@
       API_URL: "{{API_URL}}"
     };
 
-    if (window.env.API_URL.includes("{{API_URL}}")) {
+    if (window.env && window.env.API_URL && window.env.API_URL.includes("{{API_URL}}")) {
       window.env.API_URL = "http://localhost:8080";
     }
   </script>

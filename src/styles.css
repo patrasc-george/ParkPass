@@ -580,6 +580,7 @@ table th[colspan="4"] {
 
 .terms-page-container .container {
     text-align: left;
+    min-width: 700px;
     width: calc(100% - 40px);
     box-sizing: border-box;
 }

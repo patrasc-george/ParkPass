@@ -29,6 +29,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    min-width: 500px;
 }
 
 .container {
@@ -273,6 +274,7 @@ table th[colspan="4"] {
     width: calc(100% - 40px);
     padding: 20px;
     box-sizing: border-box;
+    min-width: 1200px;
 }
 
 .buttons {

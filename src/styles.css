@@ -1,5 +1,6 @@
 html,
 body {
+    min-width: 550px;
     margin: 0;
     padding: 0;
     height: 100%;
@@ -17,6 +18,8 @@ body {
 }
 
 .site-header {
+    display: flex;
+    flex-grow: 1;
     background-color: white;
     padding: 10px 20px;
     border-radius: 0 0 15px 15px;
@@ -29,7 +32,6 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    min-width: 500px;
 }
 
 .container {
@@ -41,7 +43,7 @@ body {
     width: 100%;
     border: 1px solid #dcdcdc;
     flex-grow: 1;
-    margin: 100px auto 200px auto;
+    margin: 100px auto 500px auto;
 }
 
 .logo-container {
@@ -55,6 +57,7 @@ body {
 }
 
 .site-header-invisible {
+    display: flex;
     background-color: transparent;
     height: 40px;
     padding: 10px 20px;
@@ -269,12 +272,10 @@ table th[colspan="4"] {
 }
 
 .full-width {
-    margin-left: 20px;
-    margin-right: 20px;
+    min-width: 1200px;
     width: calc(100% - 40px);
     padding: 20px;
     box-sizing: border-box;
-    min-width: 1200px;
 }
 
 .buttons {
@@ -616,6 +617,8 @@ table th[colspan="4"] {
 }
 
 footer {
+    display: flex;
+    flex-grow: 1;
     background-color: #ffffff;
     padding: 20px;
     border-radius: 15px 15px 0 0;

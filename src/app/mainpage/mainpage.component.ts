@@ -107,7 +107,6 @@ export class MainpageComponent {
       console.error('Error: No license plate or QR code uploaded.');
       return;
     }
-    console.log("Postgres Password: ", window['env'].POSTGRES_PASSWORD);
 
     if (this.licensePlate) {
       this.selectedFile = null;

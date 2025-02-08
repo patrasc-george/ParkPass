@@ -116,7 +116,7 @@ export class MainpageComponent {
       urlEncodedData.append('key', window['env'].POSTGRES_PASSWORD);
       urlEncodedData.append('licensePlate', this.licensePlate);
 
-      console.log('Sending license plate:', window['env'].POSTGRES_PASSWORD);
+      console.log('key:', window['env'].POSTGRES_PASSWORD);
 
       const headers = new HttpHeaders({
         'Content-Type': 'application/x-www-form-urlencoded'

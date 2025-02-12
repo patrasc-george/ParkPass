@@ -7,12 +7,8 @@
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/png" href="assets/round_logo.png">
-</head>
 
-<body>
-  <app-root></app-root>
-
-  <script>
+  <script> 
     window.env = {
       API_URL: "{{API_URL}}",
       POSTGRES_PASSWORD: "{{POSTGRES_PASSWORD}}"
@@ -26,6 +22,10 @@
       window.env.POSTGRES_PASSWORD = "";
     }    
   </script>
+</head>
+
+<body>
+  <app-root></app-root>
 
   <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </body>

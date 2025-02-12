@@ -86,6 +86,7 @@ export class ResetPasswordComponent implements OnInit {
     });
 
     const apiUrl = window['env'].API_URL + '/api/subscribeNewsletter';
+    console.log('API URL:', apiUrl);
     this.http.post(apiUrl, urlEncodedData.toString(), { headers })
       .subscribe();
   }
@@ -103,6 +104,7 @@ export class ResetPasswordComponent implements OnInit {
     const headers = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
 
     const apiUrl = window['env'].API_URL + '/api/verifyResetPasswordToken';
+    console.log('API URL:', apiUrl);
     this.http.post<any>(apiUrl, urlEncodedData.toString(), { headers })
       .subscribe(
         (data) => {
@@ -137,6 +139,7 @@ export class ResetPasswordComponent implements OnInit {
     const headers = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
 
     const apiUrl = window['env'].API_URL + '/api/resetPassword';
+    console.log('API URL:', apiUrl);
     this.http.post<any>(apiUrl, urlEncodedData.toString(), { headers })
       .subscribe(
         (data) => {

@@ -42,6 +42,7 @@ export class SubscriptionComponent implements OnInit {
     urlEncodedData.append('subscriptionName', this.subscriptionName);
 
     const apiUrl = window['env'].API_URL + '/api/getSubscriptionVehicles';
+    console.log('API URL:', apiUrl);
     this.http.post(apiUrl, urlEncodedData.toString(), {
       headers: new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' })
     })
@@ -117,6 +118,7 @@ export class SubscriptionComponent implements OnInit {
     });
 
     const apiUrl = window['env'].API_URL + '/api/subscribeNewsletter';
+    console.log('API URL:', apiUrl);
     this.http.post(apiUrl, urlEncodedData.toString(), { headers })
       .subscribe();
   }
@@ -216,6 +218,7 @@ export class SubscriptionComponent implements OnInit {
 
         if (!isExpanded) {
           const apiUrl = window['env'].API_URL + '/api/getVehicleHistory';
+          console.log('API URL:', apiUrl);
           const response = await this.http.post<{ success: boolean; history: any[]; totalTimeParked?: string; payment?: string }>(
             apiUrl,
             urlEncodedData.toString(),
@@ -382,6 +385,7 @@ export class SubscriptionComponent implements OnInit {
     urlEncodedData.append('activityData', JSON.stringify(activityData));
 
     const apiUrl = window['env'].API_URL + '/api/addVehicle';
+    console.log('API URL:', apiUrl);
     return this.http.post(apiUrl, urlEncodedData.toString(), {
       headers: new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' })
     });
@@ -453,6 +457,7 @@ export class SubscriptionComponent implements OnInit {
       urlEncodedData.append('licensePlate', licensePlate);
 
       const apiUrl = window['env'].API_URL + '/api/deleteVehicle';
+      console.log('API URL:', apiUrl);
       try {
         const response = await fetch(apiUrl, {
           method: 'POST',

@@ -91,6 +91,8 @@ export class ContactComponent implements OnInit {
     });
 
     const apiUrl = window['env'].API_URL + '/api/subscribeNewsletter';
+    console.log('API URL:', apiUrl);
+
     this.http.post(apiUrl, urlEncodedData.toString(), { headers })
       .subscribe();
   }
@@ -120,6 +122,7 @@ export class ContactComponent implements OnInit {
     });
 
     const apiUrl = window['env'].API_URL + '/api/contact';
+    console.log('API URL:', apiUrl);
     this.http.post(apiUrl, urlEncodedData.toString(), { headers })
       .subscribe(
         (data: any) => this.handleServerResponse(data),

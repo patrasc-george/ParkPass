@@ -83,6 +83,7 @@ export class RecoverPasswordComponent implements OnInit {
     });
 
     const apiUrl = window['env'].API_URL + '/api/subscribeNewsletter';
+    console.log('API URL:', apiUrl);
     this.http.post(apiUrl, urlEncodedData.toString(), { headers })
       .subscribe();
   }
@@ -120,6 +121,7 @@ export class RecoverPasswordComponent implements OnInit {
       });
 
       const apiUrl = window['env'].API_URL + '/api/recoverPasswordViaEmail';
+      console.log('API URL:', apiUrl);
       this.http.post<any>(apiUrl, urlEncodedData.toString(), { headers })
         .subscribe(
           (data) => {
@@ -146,6 +148,7 @@ export class RecoverPasswordComponent implements OnInit {
       });
 
       const apiUrl = window['env'].API_URL + '/api/recoverPasswordViaSMS';
+      console.log('API URL:', apiUrl);
       this.http.post<{ success: boolean, message?: string }>(apiUrl, urlEncodedData.toString(), { headers })
         .subscribe(
           data => {

@@ -123,6 +123,8 @@ export class AccountComponent implements OnInit {
     });
 
     const apiUrl = window['env'].API_URL + '/api/subscribeNewsletter';
+    console.log('API URL:', apiUrl);
+
     this.http.post(apiUrl, urlEncodedData.toString(), { headers })
       .subscribe();
   }
@@ -211,6 +213,8 @@ export class AccountComponent implements OnInit {
     });
 
     const apiUrl = window['env'].API_URL + '/api/updateAccountInformation';
+    console.log('API URL:', apiUrl);
+
     this.http.post(apiUrl, urlEncodedData.toString(), { headers })
       .subscribe(
         (data: any) => {
@@ -250,6 +254,8 @@ export class AccountComponent implements OnInit {
     });
 
     const apiUrl = window['env'].API_URL + '/api/updateAccount';
+    console.log('API URL:', apiUrl);
+
     this.http.post(apiUrl, urlEncodedData.toString(), { headers })
       .subscribe(
         (data: any) => {

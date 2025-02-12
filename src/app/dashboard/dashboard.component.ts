@@ -43,6 +43,7 @@ export class DashboardComponent implements OnInit {
     });
 
     const apiUrl = window['env'].API_URL + '/api/getAdmin';
+    console.log('API URL:', apiUrl);
     this.http.post(apiUrl, urlEncodedData.toString(), { headers })
       .subscribe(
         (data: any) => {
@@ -155,6 +156,7 @@ export class DashboardComponent implements OnInit {
     });
 
     const apiUrl = window['env'].API_URL + '/api/login';
+    console.log('API URL:', apiUrl);
     this.http.post(apiUrl, urlEncodedData.toString(), { headers })
       .subscribe(
         (data: any) => {

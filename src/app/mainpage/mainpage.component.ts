@@ -75,6 +75,7 @@ export class MainpageComponent {
     });
 
     const apiUrl = window['env'].API_URL + '/api/subscribeNewsletter';
+    console.log('API URL:', apiUrl);
     this.http.post(apiUrl, urlEncodedData.toString(), { headers })
       .subscribe();
   }
@@ -101,6 +102,7 @@ export class MainpageComponent {
     this.successMessage = '';
 
     const apiUrl = window['env'].API_URL + '/api/endpoint';
+    console.log('API URL:', apiUrl);
 
     if (!this.licensePlate && !this.selectedFile) {
       this.errorMessage = 'Please enter a license plate number or upload a QR code.';

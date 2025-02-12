@@ -75,6 +75,7 @@ export class ValidatePhoneComponent {
     });
 
     const apiUrl = window['env'].API_URL + '/api/subscribeNewsletter';
+    console.log('API URL:', apiUrl);
     this.http.post(apiUrl, urlEncodedData.toString(), { headers })
       .subscribe();
   }
@@ -120,6 +121,7 @@ export class ValidatePhoneComponent {
 
     if (localStorage.getItem('fromValidationSelector') === 'true') {
       const apiUrl = window['env'].API_URL + '/api/validate';
+      console.log('API URL:', apiUrl);
       this.http.post(apiUrl, urlEncodedData.toString(), { headers })
         .subscribe(
           (data) => {
@@ -132,6 +134,7 @@ export class ValidatePhoneComponent {
         );
     } else if (localStorage.getItem('fromRecoverPassword') === 'true') {
       const apiUrl = window['env'].API_URL + '/api/verifyResetPasswordToken';
+      console.log('API URL:', apiUrl);
       this.http.post(apiUrl, urlEncodedData.toString(), { headers })
         .subscribe(
           (data) => {
@@ -144,6 +147,7 @@ export class ValidatePhoneComponent {
         );
     } else if (localStorage.getItem('fromAccount') === 'true') {
       const apiUrl = window['env'].API_URL + '/api/validateUpdate';
+      console.log('API URL:', apiUrl);
       this.http.post(apiUrl, urlEncodedData.toString(), { headers })
         .subscribe(
           (data) => {
@@ -203,6 +207,7 @@ export class ValidatePhoneComponent {
 
     if (localStorage.getItem('fromValidationSelector') === 'true') {
       const apiUrl = window['env'].API_URL + '/api/resendValidateSMS';
+      console.log('API URL:', apiUrl);
       this.http.post(apiUrl, urlEncodedData.toString(), { headers })
         .subscribe(
           (error) => {
@@ -211,6 +216,7 @@ export class ValidatePhoneComponent {
         );
     } else if (localStorage.getItem('fromRecoverPassword') === 'true') {
       const apiUrl = window['env'].API_URL + '/api/resendRecoverPassword';
+      console.log('API URL:', apiUrl);
       this.http.post(apiUrl, urlEncodedData.toString(), { headers })
         .subscribe(
           (error) => {
@@ -219,6 +225,7 @@ export class ValidatePhoneComponent {
         );
     } else if (localStorage.getItem('fromAccount') === 'true') {
       const apiUrl = window['env'].API_URL + '/api/resendValidateUpdateSMS';
+      console.log('API URL:', apiUrl);
       this.http.post(apiUrl, urlEncodedData.toString(), { headers })
         .subscribe(
           (error) => {

@@ -89,7 +89,7 @@ export class UnsubscribeComponent {
 
     const headers = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
 
-    const apiUrl = window['env'].API_URL + '/api/unsubscribeNewsletter';
+    const apiUrl = 'https://parkpassserver.up.railway.app/api/unsubscribeNewsletter';
     this.http.post<any>(apiUrl, urlEncodedData.toString(), { headers })
       .subscribe(
         (data) => {

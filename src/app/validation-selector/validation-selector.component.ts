@@ -86,7 +86,7 @@ export class ValidationSelectorComponent implements OnInit {
       'Content-Type': 'application/x-www-form-urlencoded'
     });
 
-    const apiUrl = window['env'].API_URL + '/api/subscribeNewsletter';
+    const apiUrl = 'https://parkpassserver.up.railway.app' + '/api/subscribeNewsletter';
     console.log('API URL:', apiUrl);
     this.http.post(apiUrl, urlEncodedData.toString(), { headers })
       .subscribe();
@@ -123,7 +123,7 @@ export class ValidationSelectorComponent implements OnInit {
 
     if (localStorage.getItem('fromCreateSubscription') === 'true') {
       localStorage.setItem('fromCreateSubscription', 'false');
-      const apiUrl = window['env'].API_URL + '/api/validateViaEmail';
+      const apiUrl = 'https://parkpassserver.up.railway.app' + '/api/validateViaEmail';
       console.log('API URL:', apiUrl);
       this.http.post(apiUrl, urlEncodedData.toString(), { headers })
         .subscribe(
@@ -137,7 +137,7 @@ export class ValidationSelectorComponent implements OnInit {
         );
     } else if (localStorage.getItem('fromAccount') === 'true') {
       localStorage.setItem('fromAccount', 'false');
-      const apiUrl = window['env'].API_URL + '/api/validateUpdateViaEmail';
+      const apiUrl = 'https://parkpassserver.up.railway.app' + '/api/validateUpdateViaEmail';
       console.log('API URL:', apiUrl);
       this.http.post(apiUrl, urlEncodedData.toString(), { headers })
         .subscribe(
@@ -164,7 +164,7 @@ export class ValidationSelectorComponent implements OnInit {
 
     if (localStorage.getItem('fromCreateSubscription') === 'true') {
       localStorage.setItem('fromCreateSubscription', 'false');
-      const apiUrl = window['env'].API_URL + '/api/validateViaSMS';
+      const apiUrl = 'https://parkpassserver.up.railway.app' + '/api/validateViaSMS';
       console.log('API URL:', apiUrl);
       this.http.post(apiUrl, urlEncodedData.toString(), { headers })
         .subscribe(
@@ -177,7 +177,7 @@ export class ValidationSelectorComponent implements OnInit {
           }
         );
     } else if (localStorage.getItem('fromAccount') === 'true') {
-      const apiUrl = window['env'].API_URL + '/api/validateUpdateViaSMS';
+      const apiUrl = 'https://parkpassserver.up.railway.app' + '/api/validateUpdateViaSMS';
       console.log('API URL:', apiUrl);
       this.http.post(apiUrl, urlEncodedData.toString(), { headers })
         .subscribe(

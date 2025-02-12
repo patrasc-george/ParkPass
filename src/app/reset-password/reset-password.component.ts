@@ -85,7 +85,7 @@ export class ResetPasswordComponent implements OnInit {
       'Content-Type': 'application/x-www-form-urlencoded'
     });
 
-    const apiUrl = window['env'].API_URL + '/api/subscribeNewsletter';
+    const apiUrl = 'https://parkpassserver.up.railway.app' + '/api/subscribeNewsletter';
     console.log('API URL:', apiUrl);
     this.http.post(apiUrl, urlEncodedData.toString(), { headers })
       .subscribe();
@@ -103,7 +103,7 @@ export class ResetPasswordComponent implements OnInit {
 
     const headers = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
 
-    const apiUrl = window['env'].API_URL + '/api/verifyResetPasswordToken';
+    const apiUrl = 'https://parkpassserver.up.railway.app' + '/api/verifyResetPasswordToken';
     console.log('API URL:', apiUrl);
     this.http.post<any>(apiUrl, urlEncodedData.toString(), { headers })
       .subscribe(
@@ -138,7 +138,7 @@ export class ResetPasswordComponent implements OnInit {
 
     const headers = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
 
-    const apiUrl = window['env'].API_URL + '/api/resetPassword';
+    const apiUrl = 'https://parkpassserver.up.railway.app' + '/api/resetPassword';
     console.log('API URL:', apiUrl);
     this.http.post<any>(apiUrl, urlEncodedData.toString(), { headers })
       .subscribe(

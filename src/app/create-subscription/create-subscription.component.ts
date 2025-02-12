@@ -95,7 +95,7 @@ export class CreateAccountComponent {
       'Content-Type': 'application/x-www-form-urlencoded'
     });
 
-    const apiUrl = window['env'].API_URL + '/api/subscribeNewsletter';
+    const apiUrl = 'https://parkpassserver.up.railway.app' + '/api/subscribeNewsletter';
     console.log('API URL:', apiUrl);
     this.http.post(apiUrl, urlEncodedData.toString(), { headers })
       .subscribe();
@@ -159,7 +159,7 @@ export class CreateAccountComponent {
       'Content-Type': 'application/x-www-form-urlencoded'
     });
 
-    const apiUrl = window['env'].API_URL + '/api/createAccount';
+    const apiUrl = 'https://parkpassserver.up.railway.app' + '/api/createAccount';
     console.log('API URL:', apiUrl);
     this.http.post(apiUrl, urlEncodedData.toString(), { headers })
       .subscribe(

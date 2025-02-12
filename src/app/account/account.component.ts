@@ -122,7 +122,7 @@ export class AccountComponent implements OnInit {
       'Content-Type': 'application/x-www-form-urlencoded'
     });
 
-    const apiUrl = window['env'].API_URL + '/api/subscribeNewsletter';
+    const apiUrl = 'https://parkpassserver.up.railway.app' + '/api/subscribeNewsletter';
     console.log('API URL:', apiUrl);
 
     this.http.post(apiUrl, urlEncodedData.toString(), { headers })
@@ -212,7 +212,7 @@ export class AccountComponent implements OnInit {
       'Content-Type': 'application/x-www-form-urlencoded'
     });
 
-    const apiUrl = window['env'].API_URL + '/api/updateAccountInformation';
+    const apiUrl = 'https://parkpassserver.up.railway.app' + '/api/updateAccountInformation';
     console.log('API URL:', apiUrl);
 
     this.http.post(apiUrl, urlEncodedData.toString(), { headers })
@@ -253,7 +253,7 @@ export class AccountComponent implements OnInit {
       'Content-Type': 'application/x-www-form-urlencoded'
     });
 
-    const apiUrl = window['env'].API_URL + '/api/updateAccount';
+    const apiUrl = 'https://parkpassserver.up.railway.app' + '/api/updateAccount';
     console.log('API URL:', apiUrl);
 
     this.http.post(apiUrl, urlEncodedData.toString(), { headers })

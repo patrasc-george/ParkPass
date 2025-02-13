@@ -162,7 +162,6 @@ export class ValidatePhoneComponent {
   handleServerResponse(data: any) {
     if (data.success === false) {
       this.errorMessage = 'The code entered is not correct.';
-      console.error(this.errorMessage);
       return;
     } else if (data.success === true) {
       if (data.email != '') {

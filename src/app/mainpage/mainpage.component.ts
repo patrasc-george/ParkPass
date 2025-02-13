@@ -106,7 +106,6 @@ export class MainpageComponent {
 
     if (!this.licensePlate && !this.selectedFile) {
       this.errorMessage = 'Please enter a license plate number or upload a QR code.';
-      console.error('Error: No license plate or QR code uploaded.');
       return;
     }
 
@@ -128,7 +127,6 @@ export class MainpageComponent {
             this.handleServerResponse(data);
           },
           error => {
-            console.error('Error during POST request for license plate:', error);
             this.errorMessage = error.message || 'An error occurred while processing the license plate.';
             const errorData = error.error ? error.error : { success: false };
             this.handleServerResponse(errorData);
@@ -137,17 +135,12 @@ export class MainpageComponent {
     } else if (this.selectedFile) {
       const formData = new FormData();
       formData.append('qrCodeImage', this.selectedFile, this.selectedFile.name);
-
-      console.log('Sending QR code image:', this.selectedFile.name);
-
       this.http.post(apiUrl, formData)
         .subscribe(
           data => {
-            console.log('Response from server (QR code):', data);
             this.handleServerResponse(data);
           },
           error => {
-            console.error('Error during POST request for QR code:', error);
             this.errorMessage = error.message || 'An error occurred while processing the QR code.';
             const errorData = error.error ? error.error : { success: false };
             this.handleServerResponse(errorData);

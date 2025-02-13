@@ -273,13 +273,12 @@ export class SubscriptionComponent implements OnInit {
         }
       }
     } catch (error) {
-      console.error('Eroare:', error);
+      console.error('Error:', error);
     }
   }
 
   private toggleHistoryRows(row: HTMLTableRowElement | undefined, historyData: any[]): void {
     if (!row) {
-      console.warn('Row not found for the vehicle');
       return;
     }
 

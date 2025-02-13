@@ -31,7 +31,6 @@ export class SubscriptionsComponent implements OnInit {
     try {
       this.subscriptionsTable = JSON.parse(localStorage.getItem('subscriptionsTable') || '[]');
     } catch (error) {
-      console.error('Error parsing subscriptionsTable from localStorage:', error);
       this.subscriptionsTable = [];
     }
   }

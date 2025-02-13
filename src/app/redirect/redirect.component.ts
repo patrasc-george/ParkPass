@@ -65,7 +65,6 @@ export class RedirectComponent implements OnInit {
     this.http.post(apiUrl, urlEncodedData.toString(), { headers })
       .subscribe(
         data => {
-          console.log('Login response:', data);
           this.handleServerResponse(data);
         },
         error => {

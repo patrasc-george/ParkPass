@@ -29,9 +29,9 @@ export class ValidateUpdateComponent implements OnInit {
     urlEncodedData.append('key', window['env'].POSTGRES_PASSWORD);
     urlEncodedData.append('token', token);
 
-    const headers = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    const headers = new HttpHeaders({'Content-Type': 'application/x-www-form-urlencoded' });
 
-    const apiUrl = window['env'].API_URL + '/api/validateUpdate';
+    const apiUrl = 'https://parkpassserver.up.railway.app' + '/api/validateUpdate';
     this.http.post(apiUrl, urlEncodedData.toString(), { headers })
       .subscribe(
         (data: any) => {

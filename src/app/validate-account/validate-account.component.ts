@@ -8,6 +8,9 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
   styleUrls: ['./validate-account.component.css']
 })
 export class ValidateAccountComponent implements OnInit {
+  apiURL: string = "{{API_URL}}";
+  key: string = "{{POSTGRES_PASSWORD}}";
+  
   constructor(
     private route: ActivatedRoute,
     private http: HttpClient,
@@ -24,14 +27,13 @@ export class ValidateAccountComponent implements OnInit {
   }
 
   validateAccount(token: string): void {
-    const key: string = "{{POSTGRES_PASSWORD}}";
     const urlEncodedData = new URLSearchParams();
-    urlEncodedData.append('key', key);
+    urlEncodedData.append('key', this.key);
     urlEncodedData.append('token', token);
     
     const headers = new HttpHeaders({'Content-Type': 'application/x-www-form-urlencoded' });
 
-    const apiUrl = 'https://parkpassserver.up.railway.app'+ '/api/validate';
+    const apiUrl = this.apiURL + '/api/validate';
     this.http.post(apiUrl, urlEncodedData.toString(), { headers })
       .subscribe(
         (data: any) => {

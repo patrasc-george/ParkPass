@@ -90,8 +90,7 @@ export class SubscriptionsComponent implements OnInit {
       'Content-Type': 'application/x-www-form-urlencoded'
     });
 
-    const apiUrl = 'https://parkpassserver.up.railway.app' + '/api/subscribeNewsletter';
-    console.log('API URL:', apiUrl);
+    const apiUrl = window['env'].API_URL + '/api/subscribeNewsletter';
     this.http.post(apiUrl, urlEncodedData.toString(), { headers })
       .subscribe();
   }
@@ -170,8 +169,7 @@ export class SubscriptionsComponent implements OnInit {
         urlEncodedData.append('email', email || '');
         urlEncodedData.append('subscriptionName', subscriptionName);
 
-        const apiUrl = 'https://parkpassserver.up.railway.app' + '/api/addSubscription';
-        console.log('API URL:', apiUrl);
+        const apiUrl = window['env'].API_URL + '/api/addSubscription';
         this.http.post(apiUrl, urlEncodedData.toString(), {
           headers: new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' })
         })
@@ -224,8 +222,7 @@ export class SubscriptionsComponent implements OnInit {
       urlEncodedData.append('email', email || '');
       urlEncodedData.append('subscriptionName', subscription);
 
-      const apiUrl = 'https://parkpassserver.up.railway.app' + '/api/deleteSubscription';
-      console.log('API URL:', apiUrl);
+      const apiUrl = window['env'].API_URL + '/api/deleteSubscription';
       try {
         const data: any = await this.http.post(apiUrl, urlEncodedData.toString(), {
           headers: new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' })
@@ -258,8 +255,7 @@ export class SubscriptionsComponent implements OnInit {
     urlEncodedData.append('email', email || '');
     urlEncodedData.append('subscriptionName', subscription);
 
-    const apiUrl = 'https://parkpassserver.up.railway.app' + '/api/getSubscriptionVehicles';
-    console.log('API URL:', apiUrl);
+    const apiUrl = window['env'].API_URL + '/api/getSubscriptionVehicles';
     this.http.post(apiUrl, urlEncodedData.toString(), {
       headers: new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' })
     })

@@ -73,8 +73,7 @@ export class UnsubscribeComponent {
       'Content-Type': 'application/x-www-form-urlencoded'
     });
 
-    const apiUrl = 'https://parkpassserver.up.railway.app' + '/api/subscribeNewsletter';
-    console.log('API URL:', apiUrl);
+    const apiUrl = window['env'].API_URL + '/api/subscribeNewsletter';
     this.http.post(apiUrl, urlEncodedData.toString(), { headers })
       .subscribe();
   }
@@ -90,8 +89,7 @@ export class UnsubscribeComponent {
 
     const headers = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
 
-    const apiUrl = 'https://parkpassserver.up.railway.app' + '/api/unsubscribeNewsletter';
-    console.log('API URL:', apiUrl);
+    const apiUrl = window['env'].API_URL + '/api/unsubscribeNewsletter';
     this.http.post<any>(apiUrl, urlEncodedData.toString(), { headers })
       .subscribe(
         (data) => {

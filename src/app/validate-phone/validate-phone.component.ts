@@ -74,8 +74,7 @@ export class ValidatePhoneComponent {
       'Content-Type': 'application/x-www-form-urlencoded'
     });
 
-    const apiUrl = 'https://parkpassserver.up.railway.app' + '/api/subscribeNewsletter';
-    console.log('API URL:', apiUrl);
+    const apiUrl = window['env'].API_URL + '/api/subscribeNewsletter';
     this.http.post(apiUrl, urlEncodedData.toString(), { headers })
       .subscribe();
   }
@@ -120,8 +119,7 @@ export class ValidatePhoneComponent {
     const headers = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
 
     if (localStorage.getItem('fromValidationSelector') === 'true') {
-      const apiUrl = 'https://parkpassserver.up.railway.app' + '/api/validate';
-      console.log('API URL:', apiUrl);
+      const apiUrl = window['env'].API_URL + '/api/validate';
       this.http.post(apiUrl, urlEncodedData.toString(), { headers })
         .subscribe(
           (data) => {
@@ -133,8 +131,7 @@ export class ValidatePhoneComponent {
           }
         );
     } else if (localStorage.getItem('fromRecoverPassword') === 'true') {
-      const apiUrl = 'https://parkpassserver.up.railway.app' + '/api/verifyResetPasswordToken';
-      console.log('API URL:', apiUrl);
+      const apiUrl = window['env'].API_URL + '/api/verifyResetPasswordToken';
       this.http.post(apiUrl, urlEncodedData.toString(), { headers })
         .subscribe(
           (data) => {
@@ -146,8 +143,7 @@ export class ValidatePhoneComponent {
           }
         );
     } else if (localStorage.getItem('fromAccount') === 'true') {
-      const apiUrl = 'https://parkpassserver.up.railway.app' + '/api/validateUpdate';
-      console.log('API URL:', apiUrl);
+      const apiUrl = window['env'].API_URL + '/api/validateUpdate';
       this.http.post(apiUrl, urlEncodedData.toString(), { headers })
         .subscribe(
           (data) => {
@@ -206,8 +202,7 @@ export class ValidatePhoneComponent {
     const headers = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
 
     if (localStorage.getItem('fromValidationSelector') === 'true') {
-      const apiUrl = 'https://parkpassserver.up.railway.app' + '/api/resendValidateSMS';
-      console.log('API URL:', apiUrl);
+      const apiUrl = window['env'].API_URL + '/api/resendValidateSMS';
       this.http.post(apiUrl, urlEncodedData.toString(), { headers })
         .subscribe(
           (error) => {
@@ -215,8 +210,7 @@ export class ValidatePhoneComponent {
           }
         );
     } else if (localStorage.getItem('fromRecoverPassword') === 'true') {
-      const apiUrl = 'https://parkpassserver.up.railway.app' + '/api/resendRecoverPassword';
-      console.log('API URL:', apiUrl);
+      const apiUrl = window['env'].API_URL + '/api/resendRecoverPassword';
       this.http.post(apiUrl, urlEncodedData.toString(), { headers })
         .subscribe(
           (error) => {
@@ -224,8 +218,7 @@ export class ValidatePhoneComponent {
           }
         );
     } else if (localStorage.getItem('fromAccount') === 'true') {
-      const apiUrl = 'https://parkpassserver.up.railway.app' + '/api/resendValidateUpdateSMS';
-      console.log('API URL:', apiUrl);
+      const apiUrl = window['env'].API_URL + '/api/resendValidateUpdateSMS';
       this.http.post(apiUrl, urlEncodedData.toString(), { headers })
         .subscribe(
           (error) => {

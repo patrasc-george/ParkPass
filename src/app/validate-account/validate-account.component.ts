@@ -30,8 +30,7 @@ export class ValidateAccountComponent implements OnInit {
 
     const headers = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
 
-    const apiUrl = 'https://parkpassserver.up.railway.app' + '/api/validate';
-    console.log('API URL:', apiUrl);
+    const apiUrl = window['env'].API_URL + '/api/validate';
     this.http.post(apiUrl, urlEncodedData.toString(), { headers })
       .subscribe(
         (data: any) => {

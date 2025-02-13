@@ -59,8 +59,7 @@ export class RedirectComponent implements OnInit {
       'Content-Type': 'application/x-www-form-urlencoded'
     });
 
-    const apiUrl = 'https://parkpassserver.up.railway.app' + '/api/login';
-    console.log('API URL:', apiUrl);
+    const apiUrl = window['env'].API_URL + '/api/login';
     this.http.post(apiUrl, urlEncodedData.toString(), { headers })
       .subscribe(
         data => {

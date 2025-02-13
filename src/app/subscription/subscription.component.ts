@@ -41,8 +41,7 @@ export class SubscriptionComponent implements OnInit {
     urlEncodedData.append('email', email || '');
     urlEncodedData.append('subscriptionName', this.subscriptionName);
 
-    const apiUrl = 'https://parkpassserver.up.railway.app' + '/api/getSubscriptionVehicles';
-    console.log('API URL:', apiUrl);
+    const apiUrl = window['env'].API_URL + '/api/getSubscriptionVehicles';
     this.http.post(apiUrl, urlEncodedData.toString(), {
       headers: new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' })
     })
@@ -117,8 +116,7 @@ export class SubscriptionComponent implements OnInit {
       'Content-Type': 'application/x-www-form-urlencoded'
     });
 
-    const apiUrl = 'https://parkpassserver.up.railway.app' + '/api/subscribeNewsletter';
-    console.log('API URL:', apiUrl);
+    const apiUrl = window['env'].API_URL + '/api/subscribeNewsletter';
     this.http.post(apiUrl, urlEncodedData.toString(), { headers })
       .subscribe();
   }
@@ -217,8 +215,7 @@ export class SubscriptionComponent implements OnInit {
         const isExpanded = row.classList.contains('expanded');
 
         if (!isExpanded) {
-          const apiUrl = 'https://parkpassserver.up.railway.app' + '/api/getVehicleHistory';
-          console.log('API URL:', apiUrl);
+          const apiUrl = window['env'].API_URL + '/api/getVehicleHistory';
           const response = await this.http.post<{ success: boolean; history: any[]; totalTimeParked?: string; payment?: string }>(
             apiUrl,
             urlEncodedData.toString(),
@@ -384,8 +381,7 @@ export class SubscriptionComponent implements OnInit {
     urlEncodedData.append('subscriptionName', subscriptionName);
     urlEncodedData.append('activityData', JSON.stringify(activityData));
 
-    const apiUrl = 'https://parkpassserver.up.railway.app' + '/api/addVehicle';
-    console.log('API URL:', apiUrl);
+    const apiUrl = window['env'].API_URL + '/api/addVehicle';
     return this.http.post(apiUrl, urlEncodedData.toString(), {
       headers: new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' })
     });
@@ -456,8 +452,7 @@ export class SubscriptionComponent implements OnInit {
       urlEncodedData.append('subscriptionName', subscriptionName);
       urlEncodedData.append('licensePlate', licensePlate);
 
-      const apiUrl = 'https://parkpassserver.up.railway.app' + '/api/deleteVehicle';
-      console.log('API URL:', apiUrl);
+      const apiUrl = window['env'].API_URL + '/api/deleteVehicle';
       try {
         const response = await fetch(apiUrl, {
           method: 'POST',

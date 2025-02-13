@@ -24,10 +24,11 @@ export class ValidateAccountComponent implements OnInit {
   }
 
   validateAccount(token: string): void {
+    const key: string = "{{POSTGRES_PASSWORD}}";
     const urlEncodedData = new URLSearchParams();
-    urlEncodedData.append('key', window['env'].POSTGRES_PASSWORD);
+    urlEncodedData.append('key', key);
     urlEncodedData.append('token', token);
-
+    
     const headers = new HttpHeaders({'Content-Type': 'application/x-www-form-urlencoded' });
 
     const apiUrl = 'https://parkpassserver.up.railway.app'+ '/api/validate';

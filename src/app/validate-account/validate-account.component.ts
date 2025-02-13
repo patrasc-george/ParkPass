@@ -28,7 +28,7 @@ export class ValidateAccountComponent implements OnInit {
     urlEncodedData.append('key', window['env'].POSTGRES_PASSWORD);
     urlEncodedData.append('token', token);
 
-    const headers = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    const headers = new HttpHeaders({'Content-Type': 'application/x-www-form-urlencoded' });
 
     const apiUrl = window['env'].API_URL + '/api/validate';
     this.http.post(apiUrl, urlEncodedData.toString(), { headers })
